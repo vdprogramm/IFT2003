@@ -1,0 +1,34 @@
+#include<stdio.h>
+
+struct student{
+	char name[40];
+	float grade	;
+	int id;
+};
+void blockstudent(struct student list[], int n){
+	int i, j;
+	struct student block;
+	for(i=0; i<n+1; i++){
+		for(j= i+1; j<n; j++){
+			if(list[i].grade< list[j].grade){
+				block= list[i];
+				block=list[j];
+				list[i]=list[j];
+			}
+		}
+	}
+}
+struct student SearchStudentToName(struct student list[], int n, int id ){
+	int i;
+	for(i=0; i<n; i++){
+		if(list[i].id==id){
+			return list[i];
+		}
+	}
+};
+int main (){
+	struct student liststudent[40]={
+	};
+	int n =40;
+	printf("nhap danh sach sinh vien theo ma so :%d\n");
+}

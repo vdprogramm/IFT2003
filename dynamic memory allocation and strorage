@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+	int *you;
+	int i, j;
+	
+	printf("nhap so lan phan tu:");
+	scanf("%d", &i);
+	
+	you= (int*)malloc(i * sizeof(int));
+	
+	if(you=NULL){
+		printf("khong the cap phat bo nho :");
+		exit(1);
+	}
+	for(j=0; j<i; j++){
+		printf("nhap phan tu :", j+1);
+		scanf("%d", &you[j]);
+	}
+	printf("nhap cac phan tu trong mang:");
+	for(j=0; j<i; j++){
+		printf("%d", &you[j]);
+	}
+	free(you);
+	return 0;
+}

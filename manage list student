@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct quyen_sach{
+	int maSach;
+	char TenSach[20];
+		
+};
+int main(){
+	struct quyen_sach *qs;
+	qs=(struct quyen_sach*) malloc(sizeof(struct quyen_sach));
+	
+	if(qs==NULL){
+		printf("khong the cap phat bo nho");
+		exit(1);
+	}
+	qs->maSach= 789;
+	printf("truyen co tich\n", qs->TenSach);
+	
+	printf("ma sach :%d\n", qs->maSach);
+	printf("ten sach :%c\n", qs->TenSach);
+	free(qs);
+	
+	return 0;
+}

@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+	FILE *file;
+	char data [50];
+	
+	file= fopen("mo tep tin nhi phan", "r");
+	if(file == NULL){
+		printf("co the mo duoc tep tin\n");
+		return 1;
+	}
+	else{
+		printf("khong the nao mo duoc tep tim \n");
+	}
+	printf("nhap du lieu nhi phan :");
+	fgets(data, sizeof(data), stdin);
+	
+	fprintf(file, "%s", data);
+	fclose(file);
+	
+	file= fopen("doc du lieu nhi phan tu tep tin", "r");
+	if(file == NULL){
+		printf("co the doc duoc nhi phan \n");
+		return 1;
+	}
+	else{
+		printf("khong the doc duoc so nhi phan \n");
+		
+	}
+	printf("so nhi phan hien thi ra man hinh la :\n");
+	while(fgets(data, sizeof(data), file) != NULL){
+		printf("%s", data);
+		
+	}
+	fclose(file);
+	return 0;
+}

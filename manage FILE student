@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+int main(){
+	FILE *file;
+	char Tepten[]= "duong dan toi tep tin ";
+	char danhsach[300];
+	char name ;
+	int id;
+	float score;
+	
+	file= fopen (Tepten, "r");
+	if(file= NULL){
+		printf("tep da duoc mo ra");
+		return 1;
+	}else{
+		printf("khong the nao mo tep");
+	}
+	while(fgets(danhsach, 300, file) !=NULL){
+		printf("%s", danhsach);
+	}
+	fclose(file);
+	return 0;
+}
